@@ -31,15 +31,23 @@ your-project-name
 
 もしタイポした場合など修正したい場合は、`./your-project-name/src/manifest.json`を修正してください。
 
+
 ## webpackでの開発環境の準備
 ```
 cd your-project-name
 ```
+
+## plugin.zip の出力先を作成
+```
+mkdir dist
+``` 
+
+## webpackの準備
 ```
 npm install --save-dev webpack webpack-cli @kintone/webpack-plugin-kintone-plugin
 ```
 
-## webpack.config.js を準備する
+### webpack.config.js を準備する
 
 ```
 const path = require("path");
@@ -65,7 +73,7 @@ module.exports = {
 };
 ```
 
-## webpackでビルドされたソースファイルの出力先を作成
+### webpackでビルドされたソースファイルの出力先を作成
 ```
 mkdir ./src/js/dist
 ```
