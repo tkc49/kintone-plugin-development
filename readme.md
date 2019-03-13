@@ -1,7 +1,13 @@
 # kintone-plugin-development
 
+## ダウンロード
+https://github.com/tkc49/kintone-plugin-development/releases/latest
+
 ## create-kintone-plugin のインストール
-`npm install --save-dev @kintone/create-plugin`<br>
+```
+npm install --save-dev @kintone/create-plugin
+```
+※ 上記コマンドは1回のみでOK。
 
 ## 雛形作成
 ```
