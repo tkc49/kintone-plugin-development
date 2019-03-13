@@ -47,6 +47,15 @@ mkdir dist
 npm install --save-dev webpack webpack-cli @kintone/webpack-plugin-kintone-plugin
 ```
 
+### babelのインストール
+```
+npm install --save-dev @babel/cli @babel/core @babel/preset-env babel-loader
+```
+```
+npm install --save @babel/polyfill
+```
+
+
 ### webpack.config.js を準備する
 
 ```
@@ -69,7 +78,31 @@ module.exports = {
             privateKeyPath: './private.ppk',
             pluginZipPath: './dist/plugin.zip'
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                // test: /\.js$/,
+                // 公式ドキュメントにあわせる
+                // https://github.com/babel/babel-loader
+                test: /\.m?js$/,
+                // exclude: /node_modules/,
+                // 公式ドキュメントを参照
+                // https://github.com/babel/babel-loader
+                exclude: /(node_modules|bower_components)/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            // babel7を利用するので。
+                            // presets: ['env']
+                            presets: ["@babel/preset-env"]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
 };
 ```
 
