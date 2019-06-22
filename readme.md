@@ -113,6 +113,8 @@ mkdir ./src/js/dist
 
 ## manifest.jsonを修正する
 
+manifest.json に記載されているファイルパスを変更する
+
 `js/desktop.js` -> `js/dist/desktop.js`<br>
 `js/config.js` -> `js/dist/config.js`
 
@@ -164,7 +166,8 @@ mkdir ./src/js/dist
 ```
 
 ## package.json の修正
-package.json の scripts を修正する。
+package.json の scripts を修正する。<br>
+watch, dev, build の部分をwebpackを使用するように変更。
 
 ```
 {
